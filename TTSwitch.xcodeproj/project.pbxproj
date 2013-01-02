@@ -1,0 +1,432 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D2000F61166D01EB00903E17 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2000F60166D01EB00903E17 /* UIKit.framework */; };
+		D2000F63166D01EB00903E17 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2000F62166D01EB00903E17 /* Foundation.framework */; };
+		D2000F65166D01EB00903E17 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2000F64166D01EB00903E17 /* CoreGraphics.framework */; };
+		D2000F88166D021500903E17 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2000F7E166D021500903E17 /* Default-568h@2x.png */; };
+		D2000F89166D021500903E17 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = D2000F7F166D021500903E17 /* Default.png */; };
+		D2000F8A166D021500903E17 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2000F80166D021500903E17 /* Default@2x.png */; };
+		D2000F8B166D021500903E17 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D2000F81166D021500903E17 /* InfoPlist.strings */; };
+		D2000F8C166D021500903E17 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D2000F83166D021500903E17 /* main.m */; };
+		D2000F8D166D021500903E17 /* TTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D2000F85166D021500903E17 /* TTAppDelegate.m */; };
+		D2000F95166D052E00903E17 /* TTSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = D2000F94166D052E00903E17 /* TTSwitch.m */; };
+		D2000FA9166D0BFD00903E17 /* TTDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2000FA8166D0BFD00903E17 /* TTDisplayViewController.m */; };
+		D2000FAB166D181200903E17 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2000FAA166D181200903E17 /* QuartzCore.framework */; };
+		D234CC4B167FA33200B9BFE3 /* square-switch-mask.png in Resources */ = {isa = PBXBuildFile; fileRef = D234CC43167FA33200B9BFE3 /* square-switch-mask.png */; };
+		D234CC4C167FA33200B9BFE3 /* square-switch-mask@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D234CC44167FA33200B9BFE3 /* square-switch-mask@2x.png */; };
+		D234CC4D167FA33200B9BFE3 /* square-switch-overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = D234CC45167FA33200B9BFE3 /* square-switch-overlay.png */; };
+		D234CC4E167FA33200B9BFE3 /* square-switch-overlay@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D234CC46167FA33200B9BFE3 /* square-switch-overlay@2x.png */; };
+		D234CC4F167FA33200B9BFE3 /* square-switch-track.png in Resources */ = {isa = PBXBuildFile; fileRef = D234CC47167FA33200B9BFE3 /* square-switch-track.png */; };
+		D234CC50167FA33200B9BFE3 /* square-switch-track@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D234CC48167FA33200B9BFE3 /* square-switch-track@2x.png */; };
+		D234CC5B167FA34B00B9BFE3 /* round-switch-mask.png in Resources */ = {isa = PBXBuildFile; fileRef = D234CC53167FA34B00B9BFE3 /* round-switch-mask.png */; };
+		D234CC5C167FA34B00B9BFE3 /* round-switch-mask@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D234CC54167FA34B00B9BFE3 /* round-switch-mask@2x.png */; };
+		D234CC5D167FA34B00B9BFE3 /* round-switch-overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = D234CC55167FA34B00B9BFE3 /* round-switch-overlay.png */; };
+		D234CC5E167FA34B00B9BFE3 /* round-switch-overlay@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D234CC56167FA34B00B9BFE3 /* round-switch-overlay@2x.png */; };
+		D234CC5F167FA34B00B9BFE3 /* round-switch-track.png in Resources */ = {isa = PBXBuildFile; fileRef = D234CC57167FA34B00B9BFE3 /* round-switch-track.png */; };
+		D234CC60167FA34B00B9BFE3 /* round-switch-track@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D234CC58167FA34B00B9BFE3 /* round-switch-track@2x.png */; };
+		D28499D4166FB9ED0058CE20 /* TTControlItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D28499D3166FB9ED0058CE20 /* TTControlItem.m */; };
+		D28499D7166FBA2D0058CE20 /* TTControlCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D28499D6166FBA2D0058CE20 /* TTControlCell.m */; };
+		D2C3344316823E6F001E8327 /* square-switch-thumb-highlight.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C3343F16823E6F001E8327 /* square-switch-thumb-highlight.png */; };
+		D2C3344416823E6F001E8327 /* square-switch-thumb-highlight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C3344016823E6F001E8327 /* square-switch-thumb-highlight@2x.png */; };
+		D2C3344516823E6F001E8327 /* square-switch-thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C3344116823E6F001E8327 /* square-switch-thumb.png */; };
+		D2C3344616823E6F001E8327 /* square-switch-thumb@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C3344216823E6F001E8327 /* square-switch-thumb@2x.png */; };
+		D2C3344B16823E79001E8327 /* round-switch-thumb-highlight.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C3344716823E79001E8327 /* round-switch-thumb-highlight.png */; };
+		D2C3344C16823E79001E8327 /* round-switch-thumb-highlight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C3344816823E79001E8327 /* round-switch-thumb-highlight@2x.png */; };
+		D2C3344D16823E79001E8327 /* round-switch-thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C3344916823E79001E8327 /* round-switch-thumb.png */; };
+		D2C3344E16823E79001E8327 /* round-switch-thumb@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C3344A16823E79001E8327 /* round-switch-thumb@2x.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		D2000F5D166D01EB00903E17 /* TTSwitch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TTSwitch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2000F60166D01EB00903E17 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		D2000F62166D01EB00903E17 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D2000F64166D01EB00903E17 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		D2000F7E166D021500903E17 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		D2000F7F166D021500903E17 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		D2000F80166D021500903E17 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		D2000F82166D021500903E17 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D2000F83166D021500903E17 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D2000F84166D021500903E17 /* TTAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTAppDelegate.h; sourceTree = "<group>"; };
+		D2000F85166D021500903E17 /* TTAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTAppDelegate.m; sourceTree = "<group>"; };
+		D2000F86166D021500903E17 /* TTSwitch-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "TTSwitch-Info.plist"; sourceTree = "<group>"; };
+		D2000F87166D021500903E17 /* TTSwitch-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TTSwitch-Prefix.pch"; sourceTree = "<group>"; };
+		D2000F93166D052E00903E17 /* TTSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTSwitch.h; sourceTree = "<group>"; };
+		D2000F94166D052E00903E17 /* TTSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTSwitch.m; sourceTree = "<group>"; };
+		D2000FA7166D0BFD00903E17 /* TTDisplayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTDisplayViewController.h; sourceTree = "<group>"; };
+		D2000FA8166D0BFD00903E17 /* TTDisplayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTDisplayViewController.m; sourceTree = "<group>"; };
+		D2000FAA166D181200903E17 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		D234CC43167FA33200B9BFE3 /* square-switch-mask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "square-switch-mask.png"; path = "Images/Square/square-switch-mask.png"; sourceTree = "<group>"; };
+		D234CC44167FA33200B9BFE3 /* square-switch-mask@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "square-switch-mask@2x.png"; path = "Images/Square/square-switch-mask@2x.png"; sourceTree = "<group>"; };
+		D234CC45167FA33200B9BFE3 /* square-switch-overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "square-switch-overlay.png"; path = "Images/Square/square-switch-overlay.png"; sourceTree = "<group>"; };
+		D234CC46167FA33200B9BFE3 /* square-switch-overlay@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "square-switch-overlay@2x.png"; path = "Images/Square/square-switch-overlay@2x.png"; sourceTree = "<group>"; };
+		D234CC47167FA33200B9BFE3 /* square-switch-track.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "square-switch-track.png"; path = "Images/Square/square-switch-track.png"; sourceTree = "<group>"; };
+		D234CC48167FA33200B9BFE3 /* square-switch-track@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "square-switch-track@2x.png"; path = "Images/Square/square-switch-track@2x.png"; sourceTree = "<group>"; };
+		D234CC53167FA34B00B9BFE3 /* round-switch-mask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "round-switch-mask.png"; path = "TTSwitch-Example/Images/Round/round-switch-mask.png"; sourceTree = SOURCE_ROOT; };
+		D234CC54167FA34B00B9BFE3 /* round-switch-mask@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "round-switch-mask@2x.png"; path = "TTSwitch-Example/Images/Round/round-switch-mask@2x.png"; sourceTree = SOURCE_ROOT; };
+		D234CC55167FA34B00B9BFE3 /* round-switch-overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "round-switch-overlay.png"; path = "TTSwitch-Example/Images/Round/round-switch-overlay.png"; sourceTree = SOURCE_ROOT; };
+		D234CC56167FA34B00B9BFE3 /* round-switch-overlay@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "round-switch-overlay@2x.png"; path = "TTSwitch-Example/Images/Round/round-switch-overlay@2x.png"; sourceTree = SOURCE_ROOT; };
+		D234CC57167FA34B00B9BFE3 /* round-switch-track.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "round-switch-track.png"; path = "TTSwitch-Example/Images/Round/round-switch-track.png"; sourceTree = SOURCE_ROOT; };
+		D234CC58167FA34B00B9BFE3 /* round-switch-track@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "round-switch-track@2x.png"; path = "TTSwitch-Example/Images/Round/round-switch-track@2x.png"; sourceTree = SOURCE_ROOT; };
+		D28499D2166FB9ED0058CE20 /* TTControlItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTControlItem.h; sourceTree = "<group>"; };
+		D28499D3166FB9ED0058CE20 /* TTControlItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTControlItem.m; sourceTree = "<group>"; };
+		D28499D5166FBA2D0058CE20 /* TTControlCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTControlCell.h; sourceTree = "<group>"; };
+		D28499D6166FBA2D0058CE20 /* TTControlCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTControlCell.m; sourceTree = "<group>"; };
+		D2C3343F16823E6F001E8327 /* square-switch-thumb-highlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "square-switch-thumb-highlight.png"; path = "TTSwitch-Example/Images/Square/square-switch-thumb-highlight.png"; sourceTree = SOURCE_ROOT; };
+		D2C3344016823E6F001E8327 /* square-switch-thumb-highlight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "square-switch-thumb-highlight@2x.png"; path = "TTSwitch-Example/Images/Square/square-switch-thumb-highlight@2x.png"; sourceTree = SOURCE_ROOT; };
+		D2C3344116823E6F001E8327 /* square-switch-thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "square-switch-thumb.png"; path = "TTSwitch-Example/Images/Square/square-switch-thumb.png"; sourceTree = SOURCE_ROOT; };
+		D2C3344216823E6F001E8327 /* square-switch-thumb@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "square-switch-thumb@2x.png"; path = "TTSwitch-Example/Images/Square/square-switch-thumb@2x.png"; sourceTree = SOURCE_ROOT; };
+		D2C3344716823E79001E8327 /* round-switch-thumb-highlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "round-switch-thumb-highlight.png"; path = "TTSwitch-Example/Images/Round/round-switch-thumb-highlight.png"; sourceTree = SOURCE_ROOT; };
+		D2C3344816823E79001E8327 /* round-switch-thumb-highlight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "round-switch-thumb-highlight@2x.png"; path = "TTSwitch-Example/Images/Round/round-switch-thumb-highlight@2x.png"; sourceTree = SOURCE_ROOT; };
+		D2C3344916823E79001E8327 /* round-switch-thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "round-switch-thumb.png"; path = "TTSwitch-Example/Images/Round/round-switch-thumb.png"; sourceTree = SOURCE_ROOT; };
+		D2C3344A16823E79001E8327 /* round-switch-thumb@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "round-switch-thumb@2x.png"; path = "TTSwitch-Example/Images/Round/round-switch-thumb@2x.png"; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D2000F5A166D01EB00903E17 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D2000FAB166D181200903E17 /* QuartzCore.framework in Frameworks */,
+				D2000F61166D01EB00903E17 /* UIKit.framework in Frameworks */,
+				D2000F63166D01EB00903E17 /* Foundation.framework in Frameworks */,
+				D2000F65166D01EB00903E17 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D2000F54166D01EB00903E17 = {
+			isa = PBXGroup;
+			children = (
+				D2000F7D166D021500903E17 /* TTSwitch-Example */,
+				D2000F66166D01EB00903E17 /* TTSwitch */,
+				D2000F5F166D01EB00903E17 /* Frameworks */,
+				D2000F5E166D01EB00903E17 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D2000F5E166D01EB00903E17 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D2000F5D166D01EB00903E17 /* TTSwitch.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D2000F5F166D01EB00903E17 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D2000FAA166D181200903E17 /* QuartzCore.framework */,
+				D2000F60166D01EB00903E17 /* UIKit.framework */,
+				D2000F62166D01EB00903E17 /* Foundation.framework */,
+				D2000F64166D01EB00903E17 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D2000F66166D01EB00903E17 /* TTSwitch */ = {
+			isa = PBXGroup;
+			children = (
+				D2000F93166D052E00903E17 /* TTSwitch.h */,
+				D2000F94166D052E00903E17 /* TTSwitch.m */,
+			);
+			path = TTSwitch;
+			sourceTree = "<group>";
+		};
+		D2000F7D166D021500903E17 /* TTSwitch-Example */ = {
+			isa = PBXGroup;
+			children = (
+				D2000F96166D0BAD00903E17 /* Images */,
+				D2000F8F166D022A00903E17 /* Supporting Files */,
+				D2000F84166D021500903E17 /* TTAppDelegate.h */,
+				D2000F85166D021500903E17 /* TTAppDelegate.m */,
+				D2000FA7166D0BFD00903E17 /* TTDisplayViewController.h */,
+				D2000FA8166D0BFD00903E17 /* TTDisplayViewController.m */,
+				D28499D2166FB9ED0058CE20 /* TTControlItem.h */,
+				D28499D3166FB9ED0058CE20 /* TTControlItem.m */,
+				D28499D5166FBA2D0058CE20 /* TTControlCell.h */,
+				D28499D6166FBA2D0058CE20 /* TTControlCell.m */,
+			);
+			path = "TTSwitch-Example";
+			sourceTree = "<group>";
+		};
+		D2000F8F166D022A00903E17 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D2000F7E166D021500903E17 /* Default-568h@2x.png */,
+				D2000F7F166D021500903E17 /* Default.png */,
+				D2000F80166D021500903E17 /* Default@2x.png */,
+				D2000F81166D021500903E17 /* InfoPlist.strings */,
+				D2000F83166D021500903E17 /* main.m */,
+				D2000F86166D021500903E17 /* TTSwitch-Info.plist */,
+				D2000F87166D021500903E17 /* TTSwitch-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D2000F96166D0BAD00903E17 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				D2ACA228167BAF3E00BC1D03 /* Square */,
+				D2ACA213167B821200BC1D03 /* Round */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		D2ACA213167B821200BC1D03 /* Round */ = {
+			isa = PBXGroup;
+			children = (
+				D2C3344716823E79001E8327 /* round-switch-thumb-highlight.png */,
+				D2C3344816823E79001E8327 /* round-switch-thumb-highlight@2x.png */,
+				D2C3344916823E79001E8327 /* round-switch-thumb.png */,
+				D2C3344A16823E79001E8327 /* round-switch-thumb@2x.png */,
+				D234CC53167FA34B00B9BFE3 /* round-switch-mask.png */,
+				D234CC54167FA34B00B9BFE3 /* round-switch-mask@2x.png */,
+				D234CC55167FA34B00B9BFE3 /* round-switch-overlay.png */,
+				D234CC56167FA34B00B9BFE3 /* round-switch-overlay@2x.png */,
+				D234CC57167FA34B00B9BFE3 /* round-switch-track.png */,
+				D234CC58167FA34B00B9BFE3 /* round-switch-track@2x.png */,
+			);
+			name = Round;
+			path = Images/Default;
+			sourceTree = "<group>";
+		};
+		D2ACA228167BAF3E00BC1D03 /* Square */ = {
+			isa = PBXGroup;
+			children = (
+				D2C3343F16823E6F001E8327 /* square-switch-thumb-highlight.png */,
+				D2C3344016823E6F001E8327 /* square-switch-thumb-highlight@2x.png */,
+				D2C3344116823E6F001E8327 /* square-switch-thumb.png */,
+				D2C3344216823E6F001E8327 /* square-switch-thumb@2x.png */,
+				D234CC43167FA33200B9BFE3 /* square-switch-mask.png */,
+				D234CC44167FA33200B9BFE3 /* square-switch-mask@2x.png */,
+				D234CC45167FA33200B9BFE3 /* square-switch-overlay.png */,
+				D234CC46167FA33200B9BFE3 /* square-switch-overlay@2x.png */,
+				D234CC47167FA33200B9BFE3 /* square-switch-track.png */,
+				D234CC48167FA33200B9BFE3 /* square-switch-track@2x.png */,
+			);
+			name = Square;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D2000F5C166D01EB00903E17 /* TTSwitch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D2000F7A166D01EB00903E17 /* Build configuration list for PBXNativeTarget "TTSwitch" */;
+			buildPhases = (
+				D2000F59166D01EB00903E17 /* Sources */,
+				D2000F5A166D01EB00903E17 /* Frameworks */,
+				D2000F5B166D01EB00903E17 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TTSwitch;
+			productName = TTSwitch;
+			productReference = D2000F5D166D01EB00903E17 /* TTSwitch.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D2000F55166D01EB00903E17 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = TT;
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Two Toasters";
+			};
+			buildConfigurationList = D2000F58166D01EB00903E17 /* Build configuration list for PBXProject "TTSwitch" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = D2000F54166D01EB00903E17;
+			productRefGroup = D2000F5E166D01EB00903E17 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D2000F5C166D01EB00903E17 /* TTSwitch */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D2000F5B166D01EB00903E17 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D2000F88166D021500903E17 /* Default-568h@2x.png in Resources */,
+				D2000F89166D021500903E17 /* Default.png in Resources */,
+				D2000F8A166D021500903E17 /* Default@2x.png in Resources */,
+				D2000F8B166D021500903E17 /* InfoPlist.strings in Resources */,
+				D234CC4B167FA33200B9BFE3 /* square-switch-mask.png in Resources */,
+				D234CC4C167FA33200B9BFE3 /* square-switch-mask@2x.png in Resources */,
+				D234CC4D167FA33200B9BFE3 /* square-switch-overlay.png in Resources */,
+				D234CC4E167FA33200B9BFE3 /* square-switch-overlay@2x.png in Resources */,
+				D234CC4F167FA33200B9BFE3 /* square-switch-track.png in Resources */,
+				D234CC50167FA33200B9BFE3 /* square-switch-track@2x.png in Resources */,
+				D234CC5B167FA34B00B9BFE3 /* round-switch-mask.png in Resources */,
+				D234CC5C167FA34B00B9BFE3 /* round-switch-mask@2x.png in Resources */,
+				D234CC5D167FA34B00B9BFE3 /* round-switch-overlay.png in Resources */,
+				D234CC5E167FA34B00B9BFE3 /* round-switch-overlay@2x.png in Resources */,
+				D234CC5F167FA34B00B9BFE3 /* round-switch-track.png in Resources */,
+				D234CC60167FA34B00B9BFE3 /* round-switch-track@2x.png in Resources */,
+				D2C3344316823E6F001E8327 /* square-switch-thumb-highlight.png in Resources */,
+				D2C3344416823E6F001E8327 /* square-switch-thumb-highlight@2x.png in Resources */,
+				D2C3344516823E6F001E8327 /* square-switch-thumb.png in Resources */,
+				D2C3344616823E6F001E8327 /* square-switch-thumb@2x.png in Resources */,
+				D2C3344B16823E79001E8327 /* round-switch-thumb-highlight.png in Resources */,
+				D2C3344C16823E79001E8327 /* round-switch-thumb-highlight@2x.png in Resources */,
+				D2C3344D16823E79001E8327 /* round-switch-thumb.png in Resources */,
+				D2C3344E16823E79001E8327 /* round-switch-thumb@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D2000F59166D01EB00903E17 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D2000F8C166D021500903E17 /* main.m in Sources */,
+				D2000F8D166D021500903E17 /* TTAppDelegate.m in Sources */,
+				D2000F95166D052E00903E17 /* TTSwitch.m in Sources */,
+				D2000FA9166D0BFD00903E17 /* TTDisplayViewController.m in Sources */,
+				D28499D4166FB9ED0058CE20 /* TTControlItem.m in Sources */,
+				D28499D7166FBA2D0058CE20 /* TTControlCell.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		D2000F81166D021500903E17 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D2000F82166D021500903E17 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D2000F78166D01EB00903E17 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		D2000F79166D01EB00903E17 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D2000F7B166D01EB00903E17 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TTSwitch-Example/TTSwitch-Prefix.pch";
+				INFOPLIST_FILE = "TTSwitch-Example/TTSwitch-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		D2000F7C166D01EB00903E17 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TTSwitch-Example/TTSwitch-Prefix.pch";
+				INFOPLIST_FILE = "TTSwitch-Example/TTSwitch-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D2000F58166D01EB00903E17 /* Build configuration list for PBXProject "TTSwitch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D2000F78166D01EB00903E17 /* Debug */,
+				D2000F79166D01EB00903E17 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D2000F7A166D01EB00903E17 /* Build configuration list for PBXNativeTarget "TTSwitch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D2000F7B166D01EB00903E17 /* Debug */,
+				D2000F7C166D01EB00903E17 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D2000F55166D01EB00903E17 /* Project object */;
+}
