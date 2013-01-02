@@ -6,8 +6,8 @@ you want. It also adds block support when the switch value is changed.
 The switch also supports UIAppearance. You can globally setup all the TTSwitch appeareance and then anytime
 you create an instance it will already be styled.
 
-![Switches On](https://github.com/twotoasters/TTSwitch/blob/scott-dev/Resources/switches_on.png)
-![Switches Off](https://github.com/twotoasters/TTSwitch/blob/scott-dev/Resources/switches_off.png)
+<img src="https://raw.github.com/twotoasters/TTSwitch/master/Resources/switches_on.png" height="50%" /> &nbsp;
+<img src="https://raw.github.com/twotoasters/TTSwitch/master/Resources/switches_off.png" height="50%" />
 
 ## Getting Started
 
@@ -17,9 +17,9 @@ Simply add the TTSwitch.h + TTSwitch.m files in the TTSwitch folder to your Xcod
 
 ## Resources
 
-To make it easy to create your own custom switch we have included a [PSD](https://github.com/twotoasters/TTSwitch/blob/scott-dev/Resources/TTSwitch.psd?raw=true) of the switches you see in the app. You are free to use these or make your own. You can also send this to your designer so that they will know how to design and cut the switches. We have also included a diagram of the layers of the switch so you can see how it is layed out.
+To make it easy to create your own custom switch we have included a [PSD](https://github.com/twotoasters/TTSwitch/raw/master/Resources/TTSwitch.psd) of the switches you see in the app. You are free to use these or make your own. You can also send this to your designer so that they will know how to design and cut the switches. We have also included a diagram of the layers of the switch so you can see how it is layed out.
 
-![Switch layers](../../../raw/scott-dev/Resources/switch_layers.png)
+![Switch layers](https://raw.github.com/twotoasters/TTSwitch/master/Resources/switch_layers.png)
 
 ## Example Usage
 
@@ -72,8 +72,6 @@ switch.trackMaskImage = [UIImage imageNamed:@"round-switch-mask"];
 switch.thumbMaskImage = [UIImage imageNamed:@"round-switch-mask"];
 switch.thumbOffsetY = -3.0f; // Set this to -3 to compensate for shadow 
 ```
-
-// TODO image
 
 ## Credits
 
