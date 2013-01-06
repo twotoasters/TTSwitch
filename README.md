@@ -29,7 +29,7 @@ pod 'TTSwitch', '~> 0.0.1'
 
 To make it easy to create your own custom switch we have included a [PSD](https://github.com/twotoasters/TTSwitch/raw/master/Resources/TTSwitch.psd) of the switches you see in the app. You are free to use these or make your own. You can also send this to your designer so that they will know how to design and cut the switches. We have also included a diagram of the layers of the switch so you can see how it is layed out.
 
-<img src="https://raw.github.com/twotoasters/TTSwitch/master/Resources/switch_layers.png" height="70%" width="70%" />
+<img src="https://raw.github.com/twotoasters/TTSwitch/master/Resources/switch_layers.png" height="328" width="560" />
 
 ## Example Usage
 
