@@ -11,15 +11,25 @@ you create an instance it will already be styled.
 
 ## Getting Started
 
+### Git submodule
+
 Add the TTSwitch as a submodule to your project or download the code from the master branch [here](https://github.com/twotoasters/TTSwitch/archive/master.zip).
 
 Simply add the TTSwitch.h + TTSwitch.m files in the TTSwitch folder to your Xcode project. Then `#include "TTSwitch.h"` in your source files where you want to use the TTSwitch.
+
+### [CocoaPods](http://cocoapods.org/)
+
+Add TTSwitch to your `Podfile` and `pod install`.
+
+```ruby
+pod 'TTSwitch', '~> 0.0.1'
+```
 
 ## Resources
 
 To make it easy to create your own custom switch we have included a [PSD](https://github.com/twotoasters/TTSwitch/raw/master/Resources/TTSwitch.psd) of the switches you see in the app. You are free to use these or make your own. You can also send this to your designer so that they will know how to design and cut the switches. We have also included a diagram of the layers of the switch so you can see how it is layed out.
 
-![Switch layers](https://raw.github.com/twotoasters/TTSwitch/master/Resources/switch_layers.png)
+<img src="https://raw.github.com/twotoasters/TTSwitch/master/Resources/switch_layers.png" height="70%" width="70%" />
 
 ## Example Usage
 
