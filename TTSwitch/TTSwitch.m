@@ -39,42 +39,53 @@ static const CGFloat kTTSwitchAnimationDuration = 0.25;
 
 #pragma mark - Init/dealloc
 
+- (void)awakeFromNib
+{
+    [super awakeFromNib];
+    [self commonInit];
+}
+
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
-        _maskedTrackView = [[UIView alloc] initWithFrame:self.bounds];
-        _maskedThumbView = [[UIView alloc] initWithFrame:self.bounds];
-        
-        _trackImageView = [[UIImageView alloc] init];
-        _overlayImageView = [[UIImageView alloc] initWithFrame:self.bounds];
-        
-        _thumbImageView = [[UIImageView alloc] init];
-        [_thumbImageView setUserInteractionEnabled:YES];
-        
-        [_maskedTrackView addSubview:_trackImageView];
-        [_maskedThumbView addSubview:_thumbImageView];
-        
-        [self addSubview:_maskedTrackView];
-        [self addSubview:_overlayImageView];
-        [self addSubview:_maskedThumbView];
-        
-        // Track Mask Layers
-        _trackMaskLayer = [CALayer layer];
-        _trackMaskLayer.frame = self.bounds;
-        
-        UIPanGestureRecognizer *thumbPanGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handleThumbPanGesture:)];
-        [thumbPanGestureRecognizer setMinimumNumberOfTouches:1];
-        [_thumbImageView addGestureRecognizer:thumbPanGestureRecognizer];
-        
-        UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTapGesture:)];
-        [self addGestureRecognizer:tapGestureRecognizer];
-        
-        self.clipsToBounds = NO;
-        self.layer.rasterizationScale = [[UIScreen mainScreen] scale];
-        self.layer.shouldRasterize = YES;
+        [self commonInit];
     }
     return self;
+}
+
+- (void)commonInit;
+{
+    _maskedTrackView = [[UIView alloc] initWithFrame:self.bounds];
+    _maskedThumbView = [[UIView alloc] initWithFrame:self.bounds];
+    
+    _trackImageView = [[UIImageView alloc] init];
+    _overlayImageView = [[UIImageView alloc] initWithFrame:self.bounds];
+    
+    _thumbImageView = [[UIImageView alloc] init];
+    [_thumbImageView setUserInteractionEnabled:YES];
+    
+    [_maskedTrackView addSubview:_trackImageView];
+    [_maskedThumbView addSubview:_thumbImageView];
+    
+    [self addSubview:_maskedTrackView];
+    [self addSubview:_overlayImageView];
+    [self addSubview:_maskedThumbView];
+    
+    // Track Mask Layers
+    _trackMaskLayer = [CALayer layer];
+    _trackMaskLayer.frame = self.bounds;
+    
+    UIPanGestureRecognizer *thumbPanGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handleThumbPanGesture:)];
+    [thumbPanGestureRecognizer setMinimumNumberOfTouches:1];
+    [_thumbImageView addGestureRecognizer:thumbPanGestureRecognizer];
+    
+    UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTapGesture:)];
+    [self addGestureRecognizer:tapGestureRecognizer];
+    
+    self.clipsToBounds = NO;
+    self.layer.rasterizationScale = [[UIScreen mainScreen] scale];
+    self.layer.shouldRasterize = YES;
 }
 
 #pragma mark - Public interface
