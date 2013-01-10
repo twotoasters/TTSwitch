@@ -10,10 +10,31 @@
 
 #import "TTDisplayViewController.h"
 
+#import "TTSwitch.h"
+
 @implementation TTAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    /**
+     Appearance Magic. Setup your switch once and use it throughout your app without haven't to specify the styling again and again.
+     
+     This is an example of the implementing the default UISwitch with images. There is a small shadow on the sides of the
+     thumb that need to be masked when the thumb is fully on or off. Since there is a shadow on the thumb we also need to
+     give it an inset so that i will sit on the edge when fully on or off.
+     
+     The switch size should be the size of the overlay.
+     */
+    [[TTSwitch appearance] setTrackImage:[UIImage imageNamed:@"round-switch-track"]];
+    [[TTSwitch appearance] setOverlayImage:[UIImage imageNamed:@"round-switch-overlay"]];
+    [[TTSwitch appearance] setTrackMaskImage:[UIImage imageNamed:@"round-switch-mask"]];
+    [[TTSwitch appearance] setThumbImage:[UIImage imageNamed:@"round-switch-thumb"]];
+    [[TTSwitch appearance] setThumbHighlightImage:[UIImage imageNamed:@"round-switch-thumb-highlight"]];
+    [[TTSwitch appearance] setThumbMaskImage:[UIImage imageNamed:@"round-switch-mask"]];
+    [[TTSwitch appearance] setThumbInsetX:-3.0f];
+    [[TTSwitch appearance] setThumbOffsetY:-3.0f];
+    
+    // Window setup and presentation
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     TTDisplayViewController *displayViewController = [[TTDisplayViewController alloc] initWithNibName:nil bundle:nil];
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:displayViewController];
