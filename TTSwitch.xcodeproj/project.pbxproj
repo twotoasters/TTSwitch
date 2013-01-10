@@ -41,6 +41,8 @@
 		D2C3344C16823E79001E8327 /* round-switch-thumb-highlight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C3344816823E79001E8327 /* round-switch-thumb-highlight@2x.png */; };
 		D2C3344D16823E79001E8327 /* round-switch-thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C3344916823E79001E8327 /* round-switch-thumb.png */; };
 		D2C3344E16823E79001E8327 /* round-switch-thumb@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C3344A16823E79001E8327 /* round-switch-thumb@2x.png */; };
+		D2C8DB2E169F1A06002A389D /* TTXibViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2C8DB2C169F1A06002A389D /* TTXibViewController.m */; };
+		D2C8DB2F169F1A06002A389D /* TTXibViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2C8DB2D169F1A06002A389D /* TTXibViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +88,9 @@
 		D2C3344816823E79001E8327 /* round-switch-thumb-highlight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "round-switch-thumb-highlight@2x.png"; path = "TTSwitch-Example/Images/Round/round-switch-thumb-highlight@2x.png"; sourceTree = SOURCE_ROOT; };
 		D2C3344916823E79001E8327 /* round-switch-thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "round-switch-thumb.png"; path = "TTSwitch-Example/Images/Round/round-switch-thumb.png"; sourceTree = SOURCE_ROOT; };
 		D2C3344A16823E79001E8327 /* round-switch-thumb@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "round-switch-thumb@2x.png"; path = "TTSwitch-Example/Images/Round/round-switch-thumb@2x.png"; sourceTree = SOURCE_ROOT; };
+		D2C8DB2B169F1A06002A389D /* TTXibViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTXibViewController.h; sourceTree = "<group>"; };
+		D2C8DB2C169F1A06002A389D /* TTXibViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTXibViewController.m; sourceTree = "<group>"; };
+		D2C8DB2D169F1A06002A389D /* TTXibViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TTXibViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +159,9 @@
 				D28499D3166FB9ED0058CE20 /* TTControlItem.m */,
 				D28499D5166FBA2D0058CE20 /* TTControlCell.h */,
 				D28499D6166FBA2D0058CE20 /* TTControlCell.m */,
+				D2C8DB2B169F1A06002A389D /* TTXibViewController.h */,
+				D2C8DB2C169F1A06002A389D /* TTXibViewController.m */,
+				D2C8DB2D169F1A06002A389D /* TTXibViewController.xib */,
 			);
 			path = "TTSwitch-Example";
 			sourceTree = "<group>";
@@ -292,6 +300,7 @@
 				D2C3344C16823E79001E8327 /* round-switch-thumb-highlight@2x.png in Resources */,
 				D2C3344D16823E79001E8327 /* round-switch-thumb.png in Resources */,
 				D2C3344E16823E79001E8327 /* round-switch-thumb@2x.png in Resources */,
+				D2C8DB2F169F1A06002A389D /* TTXibViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,6 +317,7 @@
 				D2000FA9166D0BFD00903E17 /* TTDisplayViewController.m in Sources */,
 				D28499D4166FB9ED0058CE20 /* TTControlItem.m in Sources */,
 				D28499D7166FBA2D0058CE20 /* TTControlCell.m in Sources */,
+				D2C8DB2E169F1A06002A389D /* TTXibViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

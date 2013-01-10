@@ -39,22 +39,23 @@ static const CGFloat kTTSwitchAnimationDuration = 0.25;
 
 #pragma mark - Init/dealloc
 
-- (void)awakeFromNib
-{
-    [super awakeFromNib];
-    [self commonInit];
-}
-
 - (id)initWithFrame:(CGRect)frame
 {
-    self = [super initWithFrame:frame];
-    if (self) {
+    if ((self = [super initWithFrame:frame])) {
         [self commonInit];
     }
     return self;
 }
 
-- (void)commonInit;
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    if ((self = [super initWithCoder:aDecoder])) {
+        [self commonInit];
+    }
+    return self;
+}
+
+- (void)commonInit
 {
     _maskedTrackView = [[UIView alloc] initWithFrame:self.bounds];
     _maskedThumbView = [[UIView alloc] initWithFrame:self.bounds];
