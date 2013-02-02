@@ -57,6 +57,8 @@ static const CGFloat kTTSwitchAnimationDuration = 0.25;
 
 - (void)commonInit
 {
+    _maskInLockPosition = @YES;
+    
     _maskedTrackView = [[UIView alloc] initWithFrame:self.bounds];
     _maskedThumbView = [[UIView alloc] initWithFrame:self.bounds];
     
@@ -224,13 +226,13 @@ static const CGFloat kTTSwitchAnimationDuration = 0.25;
             [self.thumbImageView setCenter:(CGPoint){ newThumbXCenter, self.thumbImageView.center.y }];
             [self.trackImageView setCenter:(CGPoint){ newThumbXCenter, self.trackImageView.center.y }];
         } completion:^(BOOL finished) {
-            [self mask];
+            [self maskInLockPosition];
         }];
     }
     else {
         [self.thumbImageView setCenter:(CGPoint){ newThumbXCenter, self.thumbImageView.center.y }];
         [self.trackImageView setCenter:(CGPoint){ newThumbXCenter, self.trackImageView.center.y }];
-        [self mask];
+        [self maskInLockPosition];
     }
 }
 
@@ -289,8 +291,10 @@ static const CGFloat kTTSwitchAnimationDuration = 0.25;
     self.onTrackMaskImage = [self cropImage:self.trackMaskImage rect:(CGRect){ CGPointZero, { self.trackMaskImage.size.width - thumbCenterX, self.trackMaskImage.size.height } }];
 }
 
-- (void)mask
+- (void)maskInLockPosition
 {
+    if (! self.shouldMaskInLockPositin.boolValue) return;
+    
     [CATransaction setAnimationDuration:0.0f];
     if (self.isOn) {
         _trackMaskLayer.contents = (id)self.onTrackMaskImage.CGImage;
