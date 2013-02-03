@@ -40,6 +40,13 @@ typedef void(^TTSwitchChangeHandler)(BOOL on);
  */
 @property (nonatomic, assign) CGFloat thumbOffsetY UI_APPEARANCE_SELECTOR;
 
+/**
+ When switch is either fully on or off, mask the part of the track that is currently not showing. 
+ The will mask from the center of the thumb to edge of switch. 
+ Default = @YES
+ */
+@property (nonatomic, strong, getter = shouldMaskInLockPosition) NSNumber *maskInLockPosition UI_APPEARANCE_SELECTOR;
+
 @property (nonatomic, assign, getter=isOn) BOOL on;
 
 /**
