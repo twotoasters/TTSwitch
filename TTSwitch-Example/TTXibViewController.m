@@ -18,4 +18,9 @@
 
 @implementation TTXibViewController
 
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+}
+
 @end
