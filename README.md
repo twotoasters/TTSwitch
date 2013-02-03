@@ -1,5 +1,7 @@
 # TTSwitch
 
+*One switch to rule them all.*
+
 TTSwitch is a UISwitch replacement built with images. You can now fully customize its appearance to whatever
 you want. It also adds block support when the switch value is changed.
  
