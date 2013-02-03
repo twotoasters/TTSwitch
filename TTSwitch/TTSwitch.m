@@ -341,4 +341,11 @@ static const CGFloat kTTSwitchAnimationDuration = 0.25;
     [self thumbImageHighlighted:YES];
 }
 
+#pragma mark - Auto Layout
+
+- (CGSize)intrinsicContentSize
+{
+    return self.bounds.size;
+}
+
 @end
