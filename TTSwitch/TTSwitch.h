@@ -45,7 +45,7 @@ typedef void(^TTSwitchChangeHandler)(BOOL on);
  The will mask from the center of the thumb to edge of switch. 
  Default = @YES
  */
-@property (nonatomic, strong, getter = shouldMaskInLockPositin) NSNumber *maskInLockPosition UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong, getter = shouldMaskInLockPosition) NSNumber *maskInLockPosition UI_APPEARANCE_SELECTOR;
 
 @property (nonatomic, assign, getter=isOn) BOOL on;
 
