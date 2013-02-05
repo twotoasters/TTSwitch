@@ -247,7 +247,7 @@ static const CGFloat kTTSwitchAnimationDuration = 0.25;
 
 - (void)thumbImageHighlighted:(BOOL)highlighted
 {
-    if (highlighted) {
+    if (highlighted && self.thumbHighlightImage) {
         self.thumbImageView.image = self.thumbHighlightImage;
     } else {
         self.thumbImageView.image = self.thumbImage;
