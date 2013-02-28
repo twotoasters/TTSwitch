@@ -277,12 +277,12 @@ static const CGFloat kTTSwitchAnimationDuration = 0.25;
 - (void)refreshLabelFrames
 {
     CGFloat halfWidth = ceilf(CGRectGetWidth(_trackImageView.frame)/2.0f);
-    CGFloat halfThumbWidth = ceilf(_thumbImage.size.width/2.0f);
+    CGFloat halfThumbWidth = ceilf(CGRectGetWidth(_thumbImageView.frame)/2.0f);
     CGSize labelSize =  self.bounds.size;
-    labelSize.width -= halfThumbWidth;
+    labelSize.width -= CGRectGetWidth(_thumbImageView.frame);
     
-    _onLabel.frame = (CGRect) { CGPointMake(halfWidth - CGRectGetWidth(_onLabel.frame), .0f), labelSize };
-    _offLabel.frame = (CGRect) { CGPointMake(halfWidth, .0f), labelSize };
+    _onLabel.frame = (CGRect) { CGPointMake(halfWidth-halfThumbWidth-labelSize.width, .0f), labelSize };
+    _offLabel.frame = (CGRect) { CGPointMake(halfWidth+halfThumbWidth, .0f), labelSize };
 }
 
 #pragma mark - UIGestureRecognizer
