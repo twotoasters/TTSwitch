@@ -55,6 +55,12 @@ typedef void(^TTSwitchChangeHandler)(BOOL on);
 @property (nonatomic, copy) TTSwitchChangeHandler changeHandler;
 
 /**
+ Labels for the on & off state. You should only configure the appearance (font, color) and content
+ */
+@property (nonatomic, strong, readonly) UILabel *onLabel;
+@property (nonatomic, strong, readonly) UILabel *offLabel;
+
+/**
  A Boolean value that determines the off/on state of the switch.
  @param on the off/on state
  @param animated When changing the state of the switch should the switch animate to its new state

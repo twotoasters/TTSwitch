@@ -25,6 +25,9 @@ static const CGFloat kTTSwitchAnimationDuration = 0.25;
 @property (nonatomic, strong) UIImage *onTrackMaskImage;
 @property (nonatomic, strong) UIImage *offTrackMaskImage;
 
+@property (nonatomic, strong, readwrite) UILabel *onLabel;
+@property (nonatomic, strong, readwrite) UILabel *offLabel;
+
 /**
  A Boolean value that determines the off/on state of the switch.
  @param on the off/on state
@@ -71,6 +74,20 @@ static const CGFloat kTTSwitchAnimationDuration = 0.25;
     [_maskedTrackView addSubview:_trackImageView];
     [_maskedThumbView addSubview:_thumbImageView];
     
+
+    _onLabel = [[UILabel alloc] initWithFrame:(CGRect) {CGPointZero, self.bounds.size }];
+    _offLabel = [[UILabel alloc] initWithFrame:(CGRect) {CGPointZero, self.bounds.size }];
+    
+    _onLabel.backgroundColor = _offLabel.backgroundColor = [UIColor clearColor];
+    _onLabel.textAlignment = _offLabel.textAlignment = UITextAlignmentCenter;
+    
+    _onLabel.text = @"AN";
+    _offLabel.text = @"AUS";
+    
+    
+    [_trackImageView addSubview:_onLabel];
+    [_trackImageView addSubview:_offLabel];
+    
     [self addSubview:_maskedTrackView];
     [self addSubview:_overlayImageView];
     [self addSubview:_maskedThumbView];
@@ -99,6 +116,9 @@ static const CGFloat kTTSwitchAnimationDuration = 0.25;
         _trackImage = trackImage;
         [_trackImageView setImage:_trackImage];
         [_trackImageView setFrame:(CGRect){ CGPointZero, _trackImage.size }];
+        [self refreshLabelFrames];
+        
+
     }
 }
 
@@ -252,6 +272,17 @@ static const CGFloat kTTSwitchAnimationDuration = 0.25;
     } else {
         self.thumbImageView.image = self.thumbImage;
     }
+}
+
+- (void)refreshLabelFrames
+{
+    CGFloat halfWidth = ceilf(CGRectGetWidth(_trackImageView.frame)/2.0f);
+    CGFloat halfThumbWidth = ceilf(_thumbImage.size.width/2.0f);
+    CGSize labelSize =  self.bounds.size;
+    labelSize.width -= halfThumbWidth;
+    
+    _onLabel.frame = (CGRect) { CGPointMake(halfWidth - CGRectGetWidth(_onLabel.frame), .0f), labelSize };
+    _offLabel.frame = (CGRect) { CGPointMake(halfWidth, .0f), labelSize };
 }
 
 #pragma mark - UIGestureRecognizer
