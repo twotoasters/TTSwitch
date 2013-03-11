@@ -50,6 +50,25 @@ typedef void(^TTSwitchChangeHandler)(BOOL on);
 @property (nonatomic, assign, getter=isOn) BOOL on;
 
 /**
+ Use these properties to set the text of the on/off labels.
+ */
+@property (nonatomic, copy) NSString *onString;
+@property (nonatomic, copy) NSString *offString;
+
+/** 
+ Use these properties to style the labels the way you want. They will only be added to the switch if you have set the
+ text throught the onString/offString properties.
+ */
+@property (nonatomic, strong, readonly) UILabel *onLabel;
+@property (nonatomic, strong, readonly) UILabel *offLabel;
+
+/**
+ Adjust positioning of labels. It uses the right and left edge insets for the horizontal postitioning of label. The top and bottom edge insets will
+ be used to determine the height of the labels. Setting this will cause the labels to be added to the switch.
+ */
+@property (nonatomic, assign) UIEdgeInsets labelsEdgeInsets;
+
+/**
  When the switch value is changed this block will be called.
  */
 @property (nonatomic, copy) TTSwitchChangeHandler changeHandler;
