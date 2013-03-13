@@ -50,16 +50,25 @@ typedef void(^TTSwitchChangeHandler)(BOOL on);
 @property (nonatomic, assign, getter=isOn) BOOL on;
 
 /**
- Use these properties to set the text of the on/off labels.
- */
+ String for the on label.
+*/
 @property (nonatomic, copy) NSString *onString;
+
+/**
+ String for the off label.
+ */
 @property (nonatomic, copy) NSString *offString;
 
 /** 
- Use these properties to style the labels the way you want. They will only be added to the switch if you have set the
- text throught the onString/offString properties.
+ Use this property to style the on label. It will only be added to the switch if you have set the
+ text throught the onString property.
  */
 @property (nonatomic, strong, readonly) UILabel *onLabel;
+
+/**
+ Use this property to style the off label. It will only be added to the switch if you have set the
+ text throught the offString property.
+ */
 @property (nonatomic, strong, readonly) UILabel *offLabel;
 
 /**

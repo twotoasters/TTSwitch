@@ -100,13 +100,14 @@ static const CGFloat kTTSwitchAnimationDuration = 0.25;
 {
     [super layoutSubviews];
 
-    if (self.onLabel.superview && self.offLabel.superview) {
+    if (self.onString.length > 0) {
         [self.onLabel sizeToFit];
         self.onLabel.frame = CGRectIntegral((CGRect){
             { self.labelsEdgeInsets.left, self.labelsEdgeInsets.top },
             { self.onLabel.bounds.size.width, self.trackImage.size.height - self.labelsEdgeInsets.top - self.labelsEdgeInsets.bottom }
         });
-
+    }
+    if (self.offString.length > 0) {
         [self.offLabel sizeToFit];
         self.offLabel.frame = CGRectIntegral((CGRect){
             { self.trackImage.size.width - self.labelsEdgeInsets.right - self.offLabel.bounds.size.width, self.labelsEdgeInsets.top },
