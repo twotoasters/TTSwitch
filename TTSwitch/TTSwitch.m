@@ -332,7 +332,9 @@ static const CGFloat kTTSwitchAnimationDuration = 0.25;
         CGFloat leftBoundary = self.thumbInsetX;
         CGFloat range = floorf(self.frame.size.width - 2 * self.thumbInsetX - self.thumbImageView.frame.size.width);
         CGFloat rightBoundary = leftBoundary + range;
-        newX = floorf(MAX(leftBoundary, MIN(rightBoundary, newX)) + (thumbImageView.frame.size.width / 2));
+        newX = MIN(rightBoundary, newX); // don't move past right
+        newX = MAX(leftBoundary, newX); // don't move past left
+        newX = floorf(newX + (thumbImageView.frame.size.width / 2));
         
         [thumbImageView setCenter:(CGPoint){ newX, [thumbImageView center].y }];
         [self.trackImageView setCenter:(CGPoint){ newX, self.trackImageView.center.y }];
