@@ -52,11 +52,21 @@
     squareThumbSwitch.trackMaskImage = [UIImage imageNamed:@"square-switch-mask"];
     squareThumbSwitch.thumbMaskImage = nil; // Set this to nil to override the UIAppearance setting
     squareThumbSwitch.thumbInsetX = -3.0f;
-    squareThumbSwitch.thumbOffsetY = -3.0f; // Set this to -3 to compensate for shadow 
+    squareThumbSwitch.thumbOffsetY = -3.0f; // Set this to -3 to compensate for shadow
+
+    // Use on/off labels if you need to localize you switch
+    TTSwitch *roundLabelSwitch = [[TTSwitch alloc] initWithFrame:(CGRect){ CGPointZero, { 76.0f, 28.0f } }];
+    roundLabelSwitch.trackImage = [UIImage imageNamed:@"round-switch-track-no-text"];
+    roundLabelSwitch.labelsEdgeInsets = (UIEdgeInsets){ 3.0f, 10.0f, 3.0f, 10.0f };
+    roundLabelSwitch.onString = NSLocalizedString(@"ON", nil);
+    roundLabelSwitch.offString = NSLocalizedString(@"OFF", nil);
+    roundLabelSwitch.onLabel.textColor = [UIColor greenColor];
+    roundLabelSwitch.offLabel.textColor = [UIColor redColor];
     
     self.items = @[
         [TTControlItem itemWithTitle:@"Round" control:defaultSwitch],
         [TTControlItem itemWithTitle:@"Square" control:squareThumbSwitch],
+        [TTControlItem itemWithTitle:@"Labels" control:roundLabelSwitch],
     ];
 }
 
