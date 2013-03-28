@@ -43,6 +43,8 @@
 		D2C3344E16823E79001E8327 /* round-switch-thumb@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C3344A16823E79001E8327 /* round-switch-thumb@2x.png */; };
 		D2C8DB2E169F1A06002A389D /* TTXibViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2C8DB2C169F1A06002A389D /* TTXibViewController.m */; };
 		D2C8DB2F169F1A06002A389D /* TTXibViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2C8DB2D169F1A06002A389D /* TTXibViewController.xib */; };
+		D2F70A5D16ED9AD5009221B5 /* round-switch-track-no-text.png in Resources */ = {isa = PBXBuildFile; fileRef = D2F70A5B16ED9AD5009221B5 /* round-switch-track-no-text.png */; };
+		D2F70A5E16ED9AD5009221B5 /* round-switch-track-no-text@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2F70A5C16ED9AD5009221B5 /* round-switch-track-no-text@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -91,6 +93,8 @@
 		D2C8DB2B169F1A06002A389D /* TTXibViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTXibViewController.h; sourceTree = "<group>"; };
 		D2C8DB2C169F1A06002A389D /* TTXibViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTXibViewController.m; sourceTree = "<group>"; };
 		D2C8DB2D169F1A06002A389D /* TTXibViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TTXibViewController.xib; sourceTree = "<group>"; };
+		D2F70A5B16ED9AD5009221B5 /* round-switch-track-no-text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "round-switch-track-no-text.png"; path = "TTSwitch-Example/Images/Round/round-switch-track-no-text.png"; sourceTree = SOURCE_ROOT; };
+		D2F70A5C16ED9AD5009221B5 /* round-switch-track-no-text@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "round-switch-track-no-text@2x.png"; path = "TTSwitch-Example/Images/Round/round-switch-track-no-text@2x.png"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +196,8 @@
 		D2ACA213167B821200BC1D03 /* Round */ = {
 			isa = PBXGroup;
 			children = (
+				D2F70A5B16ED9AD5009221B5 /* round-switch-track-no-text.png */,
+				D2F70A5C16ED9AD5009221B5 /* round-switch-track-no-text@2x.png */,
 				D2C3344716823E79001E8327 /* round-switch-thumb-highlight.png */,
 				D2C3344816823E79001E8327 /* round-switch-thumb-highlight@2x.png */,
 				D2C3344916823E79001E8327 /* round-switch-thumb.png */,
@@ -301,6 +307,8 @@
 				D2C3344D16823E79001E8327 /* round-switch-thumb.png in Resources */,
 				D2C3344E16823E79001E8327 /* round-switch-thumb@2x.png in Resources */,
 				D2C8DB2F169F1A06002A389D /* TTXibViewController.xib in Resources */,
+				D2F70A5D16ED9AD5009221B5 /* round-switch-track-no-text.png in Resources */,
+				D2F70A5E16ED9AD5009221B5 /* round-switch-track-no-text@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -396,6 +404,7 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TTSwitch-Example/TTSwitch-Prefix.pch";
+				GCC_WARN_SHADOW = YES;
 				INFOPLIST_FILE = "TTSwitch-Example/TTSwitch-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -408,6 +417,7 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TTSwitch-Example/TTSwitch-Prefix.pch";
+				GCC_WARN_SHADOW = YES;
 				INFOPLIST_FILE = "TTSwitch-Example/TTSwitch-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";

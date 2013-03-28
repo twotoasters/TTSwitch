@@ -85,6 +85,19 @@ switch.thumbMaskImage = [UIImage imageNamed:@"round-switch-mask"];
 switch.thumbOffsetY = -3.0f; // Set this to -3 to compensate for shadow 
 ```
 
+### Switch with labels for on/off text
+
+```objc
+TTSwitch *roundLabelSwitch = [[TTSwitch alloc] initWithFrame:(CGRect){ CGPointZero, { 76.0f, 28.0f } }];
+// use normal setup and add
+roundLabelSwitch.trackImage = [UIImage imageNamed:@"round-switch-track-no-text"];
+roundLabelSwitch.labelsEdgeInsets = (UIEdgeInsets){ 3.0f, 10.0f, 3.0f, 10.0f };
+roundLabelSwitch.onString = NSLocalizedString(@"ON", nil);
+roundLabelSwitch.offString = NSLocalizedString(@"OFF", nil);
+roundLabelSwitch.onLabel.textColor = [UIColor greenColor];
+roundLabelSwitch.offLabel.textColor = [UIColor redColor];
+```
+
 ## Credits
 
 TTSwitch was created by [Scott Penrose](https://github.com/spenrose/)([@scottpenrose](http://twitter.com/scottpenrose)) and [Two Toasters](https://github.com/twotoasters)([@twotoasters](http://twitter.com/twotoasters)) in the development of [Go Try It On](http://www.gotryiton.com/).

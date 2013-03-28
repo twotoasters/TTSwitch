@@ -25,6 +25,9 @@ static const CGFloat kTTSwitchAnimationDuration = 0.25;
 @property (nonatomic, strong) UIImage *onTrackMaskImage;
 @property (nonatomic, strong) UIImage *offTrackMaskImage;
 
+@property (nonatomic, strong, readwrite) UILabel *onLabel;
+@property (nonatomic, strong, readwrite) UILabel *offLabel;
+
 /**
  A Boolean value that determines the off/on state of the switch.
  @param on the off/on state
@@ -89,6 +92,28 @@ static const CGFloat kTTSwitchAnimationDuration = 0.25;
     self.clipsToBounds = NO;
     self.layer.rasterizationScale = [[UIScreen mainScreen] scale];
     self.layer.shouldRasterize = YES;
+}
+
+#pragma mark - UIView
+
+- (void)layoutSubviews
+{
+    [super layoutSubviews];
+
+    if (self.onString.length > 0) {
+        [self.onLabel sizeToFit];
+        self.onLabel.frame = CGRectIntegral((CGRect){
+            { self.labelsEdgeInsets.left, self.labelsEdgeInsets.top },
+            { self.onLabel.bounds.size.width, self.trackImage.size.height - self.labelsEdgeInsets.top - self.labelsEdgeInsets.bottom }
+        });
+    }
+    if (self.offString.length > 0) {
+        [self.offLabel sizeToFit];
+        self.offLabel.frame = CGRectIntegral((CGRect){
+            { self.trackImage.size.width - self.labelsEdgeInsets.right - self.offLabel.bounds.size.width, self.labelsEdgeInsets.top },
+            { self.offLabel.bounds.size.width, self.trackImage.size.height - self.labelsEdgeInsets.top - self.labelsEdgeInsets.bottom }
+        });
+    }
 }
 
 #pragma mark - Public interface
@@ -171,6 +196,40 @@ static const CGFloat kTTSwitchAnimationDuration = 0.25;
     _maskInLockPosition = maskInLockPosition;
     [self standardMask];
     [self updateThumbPositionAnimated:NO];
+}
+
+- (void)setOnString:(NSString *)onString
+{
+    _onString = [onString copy];
+    self.onLabel.text = _onString;
+    [self.trackImageView addSubview:self.onLabel];
+}
+
+- (void)setOffString:(NSString *)offString
+{
+    _offString = [offString copy];
+    self.offLabel.text = _offString;
+    [self.trackImageView addSubview:self.offLabel];
+}
+
+- (UILabel *)onLabel
+{
+    if (!_onLabel) {
+        _onLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+        _onLabel.textAlignment = NSTextAlignmentLeft;
+        _onLabel.backgroundColor = [UIColor clearColor];
+    }
+    return _onLabel;
+}
+
+- (UILabel *)offLabel
+{
+    if (!_offLabel) {
+        _offLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+        _offLabel.textAlignment = NSTextAlignmentRight;
+        _offLabel.backgroundColor = [UIColor clearColor];
+    }
+    return _offLabel;
 }
 
 - (void)setOn:(BOOL)on
@@ -273,7 +332,9 @@ static const CGFloat kTTSwitchAnimationDuration = 0.25;
         CGFloat leftBoundary = self.thumbInsetX;
         CGFloat range = floorf(self.frame.size.width - 2 * self.thumbInsetX - self.thumbImageView.frame.size.width);
         CGFloat rightBoundary = leftBoundary + range;
-        newX = floorf(MAX(leftBoundary, MIN(rightBoundary, newX)) + (thumbImageView.frame.size.width / 2));
+        newX = MIN(rightBoundary, newX); // don't move past right
+        newX = MAX(leftBoundary, newX); // don't move past left
+        newX = floorf(newX + (thumbImageView.frame.size.width / 2));
         
         [thumbImageView setCenter:(CGPoint){ newX, [thumbImageView center].y }];
         [self.trackImageView setCenter:(CGPoint){ newX, self.trackImageView.center.y }];
