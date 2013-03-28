@@ -61,13 +61,13 @@ typedef void(^TTSwitchChangeHandler)(BOOL on);
 
 /** 
  Use this property to style the on label. It will only be added to the switch if you have set the
- text throught the onString property.
+ text through the onString property.
  */
 @property (nonatomic, strong, readonly) UILabel *onLabel;
 
 /**
  Use this property to style the off label. It will only be added to the switch if you have set the
- text throught the offString property.
+ text through the offString property.
  */
 @property (nonatomic, strong, readonly) UILabel *offLabel;
 
