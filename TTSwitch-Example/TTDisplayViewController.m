@@ -63,10 +63,24 @@
     roundLabelSwitch.onLabel.textColor = [UIColor greenColor];
     roundLabelSwitch.offLabel.textColor = [UIColor redColor];
     
+    // Use on/off labels if you need to localize you switch
+    TTSwitch *fadeLabelSwitch = [[TTSwitch alloc] initWithFrame:(CGRect){ CGPointZero, { 70.0f, 24.0f } }];
+    fadeLabelSwitch.switchMode = TTSwitchModeFade;
+    fadeLabelSwitch.thumbImage = [UIImage imageNamed:@"switchToggle.png"];
+    fadeLabelSwitch.thumbHighlightImage = [UIImage imageNamed:@"switchToggleHigh.png"];
+    fadeLabelSwitch.trackMaskImage = [UIImage imageNamed:@"switchMask.png"];
+    fadeLabelSwitch.trackImageOn = [UIImage imageNamed:@"switchGreen.png"];
+    fadeLabelSwitch.trackImageOff = [UIImage imageNamed:@"switchRed.png"];
+    fadeLabelSwitch.trackImage = nil;
+    
+    fadeLabelSwitch.thumbInsetX = -3.0;
+    fadeLabelSwitch.thumbOffsetY = 0.0;
+    
     self.items = @[
         [TTControlItem itemWithTitle:@"Round" control:defaultSwitch],
         [TTControlItem itemWithTitle:@"Square" control:squareThumbSwitch],
         [TTControlItem itemWithTitle:@"Labels" control:roundLabelSwitch],
+        [TTControlItem itemWithTitle:@"Fade" control:fadeLabelSwitch],
     ];
 }
 
