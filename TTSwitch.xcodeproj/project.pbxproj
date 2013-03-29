@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D053FC81706320A00D56ED9 /* switchGreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D053FC01706320A00D56ED9 /* switchGreen.png */; };
+		0D053FC91706320A00D56ED9 /* switchGreen@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D053FC11706320A00D56ED9 /* switchGreen@2x.png */; };
+		0D053FCA1706320A00D56ED9 /* switchMask.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D053FC21706320A00D56ED9 /* switchMask.png */; };
+		0D053FCB1706320A00D56ED9 /* switchMask@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D053FC31706320A00D56ED9 /* switchMask@2x.png */; };
+		0D053FCC1706320A00D56ED9 /* switchRed.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D053FC41706320A00D56ED9 /* switchRed.png */; };
+		0D053FCD1706320A00D56ED9 /* switchRed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D053FC51706320A00D56ED9 /* switchRed@2x.png */; };
+		0D053FCE1706320A00D56ED9 /* switchToggle.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D053FC61706320A00D56ED9 /* switchToggle.png */; };
+		0D053FCF1706320A00D56ED9 /* switchToggle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D053FC71706320A00D56ED9 /* switchToggle@2x.png */; };
+		0D053FD21706344B00D56ED9 /* switchToggleHigh.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D053FD01706344B00D56ED9 /* switchToggleHigh.png */; };
+		0D053FD31706344B00D56ED9 /* switchToggleHigh@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D053FD11706344B00D56ED9 /* switchToggleHigh@2x.png */; };
 		D2000F61166D01EB00903E17 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2000F60166D01EB00903E17 /* UIKit.framework */; };
 		D2000F63166D01EB00903E17 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2000F62166D01EB00903E17 /* Foundation.framework */; };
 		D2000F65166D01EB00903E17 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2000F64166D01EB00903E17 /* CoreGraphics.framework */; };
@@ -48,6 +58,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D053FC01706320A00D56ED9 /* switchGreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = switchGreen.png; sourceTree = "<group>"; };
+		0D053FC11706320A00D56ED9 /* switchGreen@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "switchGreen@2x.png"; sourceTree = "<group>"; };
+		0D053FC21706320A00D56ED9 /* switchMask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = switchMask.png; sourceTree = "<group>"; };
+		0D053FC31706320A00D56ED9 /* switchMask@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "switchMask@2x.png"; sourceTree = "<group>"; };
+		0D053FC41706320A00D56ED9 /* switchRed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = switchRed.png; sourceTree = "<group>"; };
+		0D053FC51706320A00D56ED9 /* switchRed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "switchRed@2x.png"; sourceTree = "<group>"; };
+		0D053FC61706320A00D56ED9 /* switchToggle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = switchToggle.png; sourceTree = "<group>"; };
+		0D053FC71706320A00D56ED9 /* switchToggle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "switchToggle@2x.png"; sourceTree = "<group>"; };
+		0D053FD01706344B00D56ED9 /* switchToggleHigh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = switchToggleHigh.png; sourceTree = "<group>"; };
+		0D053FD11706344B00D56ED9 /* switchToggleHigh@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "switchToggleHigh@2x.png"; sourceTree = "<group>"; };
 		D2000F5D166D01EB00903E17 /* TTSwitch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TTSwitch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2000F60166D01EB00903E17 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D2000F62166D01EB00903E17 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -112,6 +132,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D053FBF1706320A00D56ED9 /* Fade */ = {
+			isa = PBXGroup;
+			children = (
+				0D053FC01706320A00D56ED9 /* switchGreen.png */,
+				0D053FC11706320A00D56ED9 /* switchGreen@2x.png */,
+				0D053FC21706320A00D56ED9 /* switchMask.png */,
+				0D053FC31706320A00D56ED9 /* switchMask@2x.png */,
+				0D053FC41706320A00D56ED9 /* switchRed.png */,
+				0D053FC51706320A00D56ED9 /* switchRed@2x.png */,
+				0D053FC61706320A00D56ED9 /* switchToggle.png */,
+				0D053FC71706320A00D56ED9 /* switchToggle@2x.png */,
+				0D053FD01706344B00D56ED9 /* switchToggleHigh.png */,
+				0D053FD11706344B00D56ED9 /* switchToggleHigh@2x.png */,
+			);
+			name = Fade;
+			path = Images/Fade;
+			sourceTree = "<group>";
+		};
 		D2000F54166D01EB00903E17 = {
 			isa = PBXGroup;
 			children = (
@@ -187,6 +225,7 @@
 		D2000F96166D0BAD00903E17 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				0D053FBF1706320A00D56ED9 /* Fade */,
 				D2ACA228167BAF3E00BC1D03 /* Square */,
 				D2ACA213167B821200BC1D03 /* Round */,
 			);
@@ -309,6 +348,16 @@
 				D2C8DB2F169F1A06002A389D /* TTXibViewController.xib in Resources */,
 				D2F70A5D16ED9AD5009221B5 /* round-switch-track-no-text.png in Resources */,
 				D2F70A5E16ED9AD5009221B5 /* round-switch-track-no-text@2x.png in Resources */,
+				0D053FC81706320A00D56ED9 /* switchGreen.png in Resources */,
+				0D053FC91706320A00D56ED9 /* switchGreen@2x.png in Resources */,
+				0D053FCA1706320A00D56ED9 /* switchMask.png in Resources */,
+				0D053FCB1706320A00D56ED9 /* switchMask@2x.png in Resources */,
+				0D053FCC1706320A00D56ED9 /* switchRed.png in Resources */,
+				0D053FCD1706320A00D56ED9 /* switchRed@2x.png in Resources */,
+				0D053FCE1706320A00D56ED9 /* switchToggle.png in Resources */,
+				0D053FCF1706320A00D56ED9 /* switchToggle@2x.png in Resources */,
+				0D053FD21706344B00D56ED9 /* switchToggleHigh.png in Resources */,
+				0D053FD31706344B00D56ED9 /* switchToggleHigh@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
