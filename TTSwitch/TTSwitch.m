@@ -69,7 +69,7 @@ static const CGFloat kTTSwitchAnimationDuration = 0.25;
     _maskedTrackView   = [[UIView alloc] initWithFrame:self.bounds];
     _maskedThumbView   = [[UIView alloc] initWithFrame:self.bounds];
     
-    _trackImageView    = [[UIImageView alloc] initWithFrame:self.bounds];
+    _trackImageView    = [[UIImageView alloc] init];
     _trackImageOnView  = [[UIImageView alloc] init];
     _trackImageOffView = [[UIImageView alloc] init];
     
