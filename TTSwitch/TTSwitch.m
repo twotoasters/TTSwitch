@@ -69,7 +69,7 @@ static const CGFloat kTTSwitchAnimationDuration = 0.25;
     _maskedTrackView   = [[UIView alloc] initWithFrame:self.bounds];
     _maskedThumbView   = [[UIView alloc] initWithFrame:self.bounds];
     
-    _trackImageView    = [[UIImageView alloc] init];
+    _trackImageView    = [[UIImageView alloc] initWithFrame:self.bounds];
     _trackImageOnView  = [[UIImageView alloc] init];
     _trackImageOffView = [[UIImageView alloc] init];
     
@@ -110,19 +110,29 @@ static const CGFloat kTTSwitchAnimationDuration = 0.25;
 - (void)layoutSubviews
 {
     [super layoutSubviews];
-
+    
+    if(self.switchMode == TTSwitchModeFade)
+    {
+        self.trackImageView.frame = (CGRect){
+            {0,0},
+            {self.trackMaskImage.size.width * 2 - self.thumbImageView.frame.size.width - self.thumbInsetX * 2, self.trackMaskImage.size.height}
+        };
+        
+        [self updateThumbPositionAnimated:NO];
+    }
+    
     if (self.onString.length > 0) {
         [self.onLabel sizeToFit];
         self.onLabel.frame = CGRectIntegral((CGRect){
             { self.labelsEdgeInsets.left, self.labelsEdgeInsets.top },
-            { self.onLabel.bounds.size.width, self.trackImage.size.height - self.labelsEdgeInsets.top - self.labelsEdgeInsets.bottom }
+            { self.onLabel.bounds.size.width, self.trackImageView.frame.size.height - self.labelsEdgeInsets.top - self.labelsEdgeInsets.bottom }
         });
     }
     if (self.offString.length > 0) {
         [self.offLabel sizeToFit];
         self.offLabel.frame = CGRectIntegral((CGRect){
-            { self.trackImage.size.width - self.labelsEdgeInsets.right - self.offLabel.bounds.size.width, self.labelsEdgeInsets.top },
-            { self.offLabel.bounds.size.width, self.trackImage.size.height - self.labelsEdgeInsets.top - self.labelsEdgeInsets.bottom }
+            { self.trackImageView.frame.size.width - self.labelsEdgeInsets.right - self.offLabel.bounds.size.width, self.labelsEdgeInsets.top },
+            { self.offLabel.bounds.size.width, self.trackImageView.frame.size.height - self.labelsEdgeInsets.top - self.labelsEdgeInsets.bottom }
         });
     }
 }
