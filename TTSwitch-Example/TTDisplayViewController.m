@@ -63,7 +63,7 @@
     roundLabelSwitch.onLabel.textColor = [UIColor greenColor];
     roundLabelSwitch.offLabel.textColor = [UIColor redColor];
     
-    // Use on/off labels if you need to localize you switch
+    // Fade mode
     TTSwitch *fadeLabelSwitch = [[TTSwitch alloc] initWithFrame:(CGRect){ CGPointZero, { 70.0f, 24.0f } }];
     fadeLabelSwitch.switchMode = TTSwitchModeFade;
     fadeLabelSwitch.thumbImage = [UIImage imageNamed:@"switchToggle.png"];
@@ -76,11 +76,44 @@
     fadeLabelSwitch.thumbInsetX = -3.0;
     fadeLabelSwitch.thumbOffsetY = 0.0;
     
+    // Fade mode with Labels
+    TTSwitch *fadeLabelSwitchLabel = [[TTSwitch alloc] initWithFrame:(CGRect){ CGPointZero, { 70.0f, 24.0f } }];
+    
+    [fadeLabelSwitchLabel setThumbImage: [UIImage imageNamed:@"switchToggle.png"]];
+    [fadeLabelSwitchLabel setTrackMaskImage:[UIImage imageNamed:@"switchMask.png"]];
+    [fadeLabelSwitchLabel setThumbHighlightImage: [UIImage imageNamed:@"switchToggleHigh.png"]];
+    [fadeLabelSwitchLabel setSwitchMode: TTSwitchModeFade];
+    [fadeLabelSwitchLabel setTrackImageOn:[UIImage imageNamed:@"switchGreen.png"]];
+    [fadeLabelSwitchLabel setTrackImageOff:[UIImage imageNamed:@"switchRed.png"]];
+    
+    [fadeLabelSwitchLabel setTrackImage: nil];
+    
+    [fadeLabelSwitchLabel setOnString:@"YEAH"];
+    [fadeLabelSwitchLabel setOffString:@"NOPE"];
+    
+    [[fadeLabelSwitchLabel onLabel] setFont:[UIFont boldSystemFontOfSize:11]];
+    [[fadeLabelSwitchLabel offLabel] setFont:[UIFont boldSystemFontOfSize:11]];
+    
+    [[fadeLabelSwitchLabel onLabel] setTextColor: [UIColor whiteColor]];
+    [[fadeLabelSwitchLabel offLabel] setTextColor: [UIColor whiteColor]];
+    
+    [[fadeLabelSwitchLabel onLabel] setShadowColor: [UIColor colorWithRed:0.121569 green:0.600000 blue:0.454902 alpha:1.0]];
+    [[fadeLabelSwitchLabel offLabel] setShadowColor: [UIColor colorWithRed:0.796078 green:0.211765 blue:0.156863 alpha:1.0]];
+    
+    [[fadeLabelSwitchLabel onLabel] setShadowOffset: CGSizeMake(0, 1.0)];
+    [[fadeLabelSwitchLabel offLabel] setShadowOffset: CGSizeMake(0, 1.0)];
+    
+    [fadeLabelSwitchLabel setLabelsEdgeInsets: UIEdgeInsetsMake(1.0, 10.0, 1.0, 10.0)];
+    
+    [fadeLabelSwitchLabel setThumbInsetX: -3.0];
+    [fadeLabelSwitchLabel setThumbOffsetY: 0.0];
+    
     self.items = @[
         [TTControlItem itemWithTitle:@"Round" control:defaultSwitch],
         [TTControlItem itemWithTitle:@"Square" control:squareThumbSwitch],
         [TTControlItem itemWithTitle:@"Labels" control:roundLabelSwitch],
         [TTControlItem itemWithTitle:@"Fade" control:fadeLabelSwitch],
+        [TTControlItem itemWithTitle:@"Fade + Labels" control:fadeLabelSwitchLabel],
     ];
 }
 
