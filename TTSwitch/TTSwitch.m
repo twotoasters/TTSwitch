@@ -325,21 +325,18 @@ static const CGFloat kTTSwitchAnimationDuration = 0.25;
     }
     
     if ([gesture state] == UIGestureRecognizerStateBegan || [gesture state] == UIGestureRecognizerStateChanged) {
-        CGPoint translation = [gesture translationInView:[thumbImageView superview]];
+        CGRect thumbFrame = thumbImageView.frame;
+        CGRect newThumbFrame = CGRectOffset(thumbImageView.frame, [gesture translationInView:thumbImageView].x, 0);
+        newThumbFrame.origin.x = MAX(newThumbFrame.origin.x, self.thumbInsetX);
+        newThumbFrame.origin.x = MIN(newThumbFrame.origin.x, self.bounds.size.width - thumbFrame.size.width - self.thumbInsetX);
+        thumbImageView.frame = newThumbFrame;
         
-        // Don't move past start or end
-        CGFloat newX = floorf(thumbImageView.frame.origin.x + translation.x);
-        CGFloat leftBoundary = self.thumbInsetX;
-        CGFloat range = floorf(self.frame.size.width - 2 * self.thumbInsetX - self.thumbImageView.frame.size.width);
-        CGFloat rightBoundary = leftBoundary + range;
-        newX = MIN(rightBoundary, newX); // don't move past right
-        newX = MAX(leftBoundary, newX); // don't move past left
-        newX = floorf(newX + (thumbImageView.frame.size.width / 2));
+        CGFloat appliedTranslation = newThumbFrame.origin.x - thumbFrame.origin.x;
+        self.trackImageView.frame = CGRectOffset(self.trackImageView.frame, appliedTranslation, 0);
         
-        [thumbImageView setCenter:(CGPoint){ newX, [thumbImageView center].y }];
-        [self.trackImageView setCenter:(CGPoint){ newX, self.trackImageView.center.y }];
-        [gesture setTranslation:CGPointZero inView:[thumbImageView superview]];
-        [gesture setTranslation:CGPointZero inView:[self.trackImageView superview]];
+        if (CGRectContainsPoint(self.bounds, CGPointMake([gesture locationInView:self].x, 0))) {
+            [gesture setTranslation:CGPointZero inView:thumbImageView];
+        }
     }
     else if ([gesture state] == UIGestureRecognizerStateEnded) {
         [self setOn:(0.5f < self.valueAtThumbPosition) animated:YES sendActions:YES];
