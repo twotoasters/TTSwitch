@@ -7,7 +7,7 @@
 //
 
 #import "TTSwitch.h"
-
+#import "TTSwitchSubclass.h"
 #import <QuartzCore/QuartzCore.h>
 
 static const CGFloat kTTSwitchAnimationDuration = 0.25;
@@ -15,10 +15,6 @@ static const CGFloat kTTSwitchAnimationDuration = 0.25;
 @interface TTSwitch ()
 
 @property (nonatomic, strong) UIImageView *trackImageView;
-
-@property (nonatomic, strong) UIImageView *trackImageOnView;
-@property (nonatomic, strong) UIImageView *trackImageOffView;
-
 @property (nonatomic, strong) UIImageView *overlayImageView;
 @property (nonatomic, strong) UIImageView *thumbImageView;
 
@@ -48,7 +44,8 @@ static const CGFloat kTTSwitchAnimationDuration = 0.25;
 
 - (id)initWithFrame:(CGRect)frame
 {
-    if ((self = [super initWithFrame:frame])) {
+    self = [super initWithFrame:frame];
+    if (self) {
         [self commonInit];
     }
     return self;
@@ -56,7 +53,8 @@ static const CGFloat kTTSwitchAnimationDuration = 0.25;
 
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
-    if ((self = [super initWithCoder:aDecoder])) {
+    self = [super initWithCoder:aDecoder];
+    if (self) {
         [self commonInit];
     }
     return self;
@@ -66,22 +64,15 @@ static const CGFloat kTTSwitchAnimationDuration = 0.25;
 {
     _maskInLockPosition = @YES;
     
-    _maskedTrackView   = [[UIView alloc] initWithFrame:self.bounds];
-    _maskedThumbView   = [[UIView alloc] initWithFrame:self.bounds];
+    _maskedTrackView = [[UIView alloc] initWithFrame:self.bounds];
+    _maskedThumbView = [[UIView alloc] initWithFrame:self.bounds];
     
-    _trackImageView    = [[UIImageView alloc] init];
-    _trackImageOnView  = [[UIImageView alloc] init];
-    _trackImageOffView = [[UIImageView alloc] init];
+    _trackImageView = [[UIImageView alloc] init];
+    _overlayImageView = [[UIImageView alloc] initWithFrame:self.bounds];
     
-    _overlayImageView  = [[UIImageView alloc] initWithFrame:self.bounds];
-    
-    _thumbImageView    = [[UIImageView alloc] init];
+    _thumbImageView = [[UIImageView alloc] init];
     [_thumbImageView setUserInteractionEnabled:YES];
     
-    
-    [_maskedTrackView addSubview:_trackImageOnView];
-    [_maskedTrackView addSubview:_trackImageOffView];
-    // Adding this after On & Off so u can still add labels
     [_maskedTrackView addSubview:_trackImageView];
     [_maskedThumbView addSubview:_thumbImageView];
     
@@ -110,17 +101,7 @@ static const CGFloat kTTSwitchAnimationDuration = 0.25;
 - (void)layoutSubviews
 {
     [super layoutSubviews];
-    
-    if(self.switchMode == TTSwitchModeFade)
-    {
-        self.trackImageView.frame = (CGRect){
-            {0,0},
-            {self.trackMaskImage.size.width * 2 - self.thumbImageView.frame.size.width - self.thumbInsetX * 2, self.trackMaskImage.size.height}
-        };
-        
-        [self updateThumbPositionAnimated:NO];
-    }
-    
+
     if (self.onString.length > 0) {
         [self.onLabel sizeToFit];
         self.onLabel.frame = CGRectIntegral((CGRect){
@@ -139,43 +120,12 @@ static const CGFloat kTTSwitchAnimationDuration = 0.25;
 
 #pragma mark - Public interface
 
-- (void)setSwitchMode:(TTSwitchMode)switchMode
-{
-    if (_switchMode != switchMode) {
-        _switchMode = switchMode;
-        
-        if(_switchMode == TTSwitchModeFade)
-        {
-            [self setMaskInLockPosition: @NO];
-        }
-    }
-}
-
 - (void)setTrackImage:(UIImage *)trackImage
 {
     if (_trackImage != trackImage) {
         _trackImage = trackImage;
         [_trackImageView setImage:_trackImage];
         [_trackImageView setFrame:(CGRect){ CGPointZero, _trackImage.size }];
-    }
-}
-
-- (void)setTrackImageOn:(UIImage *)trackImageOn
-{
-    if (_trackImageOn != trackImageOn) {
-        _trackImageOn = trackImageOn;
-        [_trackImageOnView setImage:_trackImageOn];
-        
-        [_trackImageOnView setFrame:(CGRect){ CGPointZero, _trackImageOn.size }];
-    }
-}
-
-- (void)setTrackImageOff:(UIImage *)trackImageOff
-{
-    if (_trackImageOff != trackImageOff) {
-        _trackImageOff = trackImageOff;
-        [_trackImageOffView setImage:_trackImageOff];
-        [_trackImageOffView setFrame:(CGRect){ CGPointZero, _trackImageOff.size }];
     }
 }
 
@@ -193,10 +143,8 @@ static const CGFloat kTTSwitchAnimationDuration = 0.25;
         _trackMaskImage = trackMaskImage;
         
         _trackMaskLayer.contents = (id)[_trackMaskImage CGImage];
-        if(_switchMode != TTSwitchModeFade) {
-            [self createMasksForLockPosition];
-        }
-        
+        [self createMasksForLockPosition];
+
         self.maskedTrackView.layer.mask = _trackMaskLayer;
     }
 }
@@ -340,32 +288,25 @@ static const CGFloat kTTSwitchAnimationDuration = 0.25;
     
     [self thumbImageHighlighted:NO];
     
-    if (animated) {
-        CGFloat distanceOfTravel = fabsf((_on ? 1.0f : 0.0f) - [self valueAtThumbPosition]);
-        CGFloat animationDuration = kTTSwitchAnimationDuration * distanceOfTravel;
-        
-        [UIView animateWithDuration:animationDuration animations:^{
-            [self.thumbImageView setCenter:(CGPoint){ newThumbXCenter, self.thumbImageView.center.y }];
-            [self.trackImageView setCenter:(CGPoint){ newThumbXCenter, self.trackImageView.center.y }];
-            if(_switchMode == TTSwitchModeFade) {
-                [self.trackImageOffView setAlpha:(_on ? 0.0f : 1.0f)];
-            }
-        } completion:^(BOOL finished) {
-            if(_switchMode != TTSwitchModeFade) {
-                [self maskInLockPosition];
-            }
-        }];
-    }
-    else {
-        [self.thumbImageView setCenter:(CGPoint){ newThumbXCenter, self.thumbImageView.center.y }];
-        [self.trackImageView setCenter:(CGPoint){ newThumbXCenter, self.trackImageView.center.y }];
-        
-        if(_switchMode == TTSwitchModeFade) {
-            [self.trackImageOffView setAlpha:(_on ? 0.0f : 1.0f)];
-        }else {
-            [self maskInLockPosition];
-        }
-    }
+    CGFloat distanceOfTravel = fabsf((_on ? 1.0f : 0.0f) - [self valueAtThumbPosition]);
+    CGFloat animationDuration = animated ? kTTSwitchAnimationDuration * distanceOfTravel : 0.0f;
+
+    [UIView animateWithDuration:animationDuration animations:^{
+        [self moveThumbCenterToX:newThumbXCenter];
+    } completion:^(BOOL finished) {
+        [self didMoveThumbCenterToX:newThumbXCenter];
+    }];
+}
+
+- (void)moveThumbCenterToX:(CGFloat)newThumbCenterX
+{
+    [self.thumbImageView setCenter:(CGPoint){ newThumbCenterX, self.thumbImageView.center.y }];
+    [self.trackImageView setCenter:(CGPoint){ newThumbCenterX, self.trackImageView.center.y }];
+}
+
+- (void)didMoveThumbCenterToX:(CGFloat)newThumbCenterX
+{
+   [self maskInLockPosition]; 
 }
 
 - (void)thumbImageHighlighted:(BOOL)highlighted
@@ -400,13 +341,6 @@ static const CGFloat kTTSwitchAnimationDuration = 0.25;
         
         if (CGRectContainsPoint(self.bounds, CGPointMake([gesture locationInView:self].x, 0))) {
             [gesture setTranslation:CGPointZero inView:thumbImageView];
-        }
-
-		if(_switchMode == TTSwitchModeFade) {
-            CGFloat oldX = newThumbFrame.origin.x;
-            CGFloat leftBoundary = self.thumbInsetX;
-            CGFloat rightBoundary = self.bounds.size.width - thumbFrame.size.width - self.thumbInsetX;
-            [self.trackImageOffView setAlpha: (1 - ((oldX - leftBoundary)/(rightBoundary - leftBoundary)))];
         }
     }
     else if ([gesture state] == UIGestureRecognizerStateEnded) {

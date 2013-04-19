@@ -29,6 +29,7 @@
 		D2000F95166D052E00903E17 /* TTSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = D2000F94166D052E00903E17 /* TTSwitch.m */; };
 		D2000FA9166D0BFD00903E17 /* TTDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2000FA8166D0BFD00903E17 /* TTDisplayViewController.m */; };
 		D2000FAB166D181200903E17 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2000FAA166D181200903E17 /* QuartzCore.framework */; };
+		D21F10261721E36100B7CD7D /* TTFadeSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = D21F10251721E36100B7CD7D /* TTFadeSwitch.m */; };
 		D234CC4B167FA33200B9BFE3 /* square-switch-mask.png in Resources */ = {isa = PBXBuildFile; fileRef = D234CC43167FA33200B9BFE3 /* square-switch-mask.png */; };
 		D234CC4C167FA33200B9BFE3 /* square-switch-mask@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D234CC44167FA33200B9BFE3 /* square-switch-mask@2x.png */; };
 		D234CC4D167FA33200B9BFE3 /* square-switch-overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = D234CC45167FA33200B9BFE3 /* square-switch-overlay.png */; };
@@ -86,6 +87,9 @@
 		D2000FA7166D0BFD00903E17 /* TTDisplayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTDisplayViewController.h; sourceTree = "<group>"; };
 		D2000FA8166D0BFD00903E17 /* TTDisplayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTDisplayViewController.m; sourceTree = "<group>"; };
 		D2000FAA166D181200903E17 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		D21F10241721E36100B7CD7D /* TTFadeSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTFadeSwitch.h; sourceTree = "<group>"; };
+		D21F10251721E36100B7CD7D /* TTFadeSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTFadeSwitch.m; sourceTree = "<group>"; };
+		D21F10271721E6E900B7CD7D /* TTSwitchSubclass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTSwitchSubclass.h; sourceTree = "<group>"; };
 		D234CC43167FA33200B9BFE3 /* square-switch-mask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "square-switch-mask.png"; path = "Images/Square/square-switch-mask.png"; sourceTree = "<group>"; };
 		D234CC44167FA33200B9BFE3 /* square-switch-mask@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "square-switch-mask@2x.png"; path = "Images/Square/square-switch-mask@2x.png"; sourceTree = "<group>"; };
 		D234CC45167FA33200B9BFE3 /* square-switch-overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "square-switch-overlay.png"; path = "Images/Square/square-switch-overlay.png"; sourceTree = "<group>"; };
@@ -184,6 +188,9 @@
 			children = (
 				D2000F93166D052E00903E17 /* TTSwitch.h */,
 				D2000F94166D052E00903E17 /* TTSwitch.m */,
+				D21F10241721E36100B7CD7D /* TTFadeSwitch.h */,
+				D21F10251721E36100B7CD7D /* TTFadeSwitch.m */,
+				D21F10271721E6E900B7CD7D /* TTSwitchSubclass.h */,
 			);
 			path = TTSwitch;
 			sourceTree = "<group>";
@@ -375,6 +382,7 @@
 				D28499D4166FB9ED0058CE20 /* TTControlItem.m in Sources */,
 				D28499D7166FBA2D0058CE20 /* TTControlCell.m in Sources */,
 				D2C8DB2E169F1A06002A389D /* TTXibViewController.m in Sources */,
+				D21F10261721E36100B7CD7D /* TTFadeSwitch.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
