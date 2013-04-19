@@ -9,6 +9,11 @@
 #import <UIKit/UIKit.h>
 
 typedef void(^TTSwitchChangeHandler)(BOOL on);
+typedef enum
+{
+    TTSwitchModeSlide,
+    TTSwitchModeFade
+} TTSwitchMode;
 
 /**
  TTSwitch is a UISwitch replacement built with images. You can now fully customize its appearance to whatever
@@ -22,11 +27,17 @@ typedef void(^TTSwitchChangeHandler)(BOOL on);
  */
 @interface TTSwitch : UIControl
 
+/**
+ Adjust the vertical positioning of the thumb
+ */
+@property (nonatomic, assign) TTSwitchMode switchMode UI_APPEARANCE_SELECTOR;
+
 @property (nonatomic, strong) UIImage *trackImage UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) UIImage *trackImageOn UI_APPEARANCE_SELECTOR;
+@property (nonatomic, strong) UIImage *trackImageOff UI_APPEARANCE_SELECTOR;
 @property (nonatomic, strong) UIImage *overlayImage UI_APPEARANCE_SELECTOR;
 @property (nonatomic, strong) UIImage *thumbImage UI_APPEARANCE_SELECTOR;
 @property (nonatomic, strong) UIImage *thumbHighlightImage UI_APPEARANCE_SELECTOR;
-
 @property (nonatomic, strong) UIImage *trackMaskImage UI_APPEARANCE_SELECTOR;
 @property (nonatomic, strong) UIImage *thumbMaskImage UI_APPEARANCE_SELECTOR;
 
