@@ -57,7 +57,7 @@
     // Sets the labels positions correctly on track
     self.trackImageView.frame = (CGRect){
         CGPointZero,
-        { self.trackMaskImage.size.width * 2 - self.thumbImageView.frame.size.width - self.thumbInsetX * 2, self.trackMaskImage.size.height }
+        { self.trackMaskImage.size.width * 2.0f - self.thumbImageView.frame.size.width - self.thumbInsetX * 2.0f, self.trackMaskImage.size.height }
     };
     [self updateThumbPositionAnimated:NO];
 
@@ -111,9 +111,9 @@
     [super handleThumbPanGesture:gesture];
 
     if ([gesture state] == UIGestureRecognizerStateBegan || [gesture state] == UIGestureRecognizerStateChanged) {
-        CGFloat minBoundary = self.thumbInsetX + (self.thumbImageView.bounds.size.width / 2);
-        CGFloat maxBoundary = self.bounds.size.width - (self.thumbImageView.bounds.size.width / 2) - self.thumbInsetX;
-        [self.trackImageOffView setAlpha: (1 - ((self.thumbImageView.center.x - minBoundary)/(maxBoundary - minBoundary)))];
+        CGFloat minBoundary = self.thumbInsetX + (self.thumbImageView.bounds.size.width / 2.0f);
+        CGFloat maxBoundary = self.bounds.size.width - (self.thumbImageView.bounds.size.width / 2.0f) - self.thumbInsetX;
+        self.trackImageOffView.alpha = (1.0f - ((self.thumbImageView.center.x - minBoundary)/(maxBoundary - minBoundary)));
     }
 }
 
