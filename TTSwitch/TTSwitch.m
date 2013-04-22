@@ -7,7 +7,7 @@
 //
 
 #import "TTSwitch.h"
-
+#import "TTSwitchSubclass.h"
 #import <QuartzCore/QuartzCore.h>
 
 static const CGFloat kTTSwitchAnimationDuration = 0.25;
@@ -44,7 +44,8 @@ static const CGFloat kTTSwitchAnimationDuration = 0.25;
 
 - (id)initWithFrame:(CGRect)frame
 {
-    if ((self = [super initWithFrame:frame])) {
+    self = [super initWithFrame:frame];
+    if (self) {
         [self commonInit];
     }
     return self;
@@ -52,7 +53,8 @@ static const CGFloat kTTSwitchAnimationDuration = 0.25;
 
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
-    if ((self = [super initWithCoder:aDecoder])) {
+    self = [super initWithCoder:aDecoder];
+    if (self) {
         [self commonInit];
     }
     return self;
@@ -104,14 +106,14 @@ static const CGFloat kTTSwitchAnimationDuration = 0.25;
         [self.onLabel sizeToFit];
         self.onLabel.frame = CGRectIntegral((CGRect){
             { self.labelsEdgeInsets.left, self.labelsEdgeInsets.top },
-            { self.onLabel.bounds.size.width, self.trackImage.size.height - self.labelsEdgeInsets.top - self.labelsEdgeInsets.bottom }
+            { self.onLabel.bounds.size.width, self.trackImageView.frame.size.height - self.labelsEdgeInsets.top - self.labelsEdgeInsets.bottom }
         });
     }
     if (self.offString.length > 0) {
         [self.offLabel sizeToFit];
         self.offLabel.frame = CGRectIntegral((CGRect){
-            { self.trackImage.size.width - self.labelsEdgeInsets.right - self.offLabel.bounds.size.width, self.labelsEdgeInsets.top },
-            { self.offLabel.bounds.size.width, self.trackImage.size.height - self.labelsEdgeInsets.top - self.labelsEdgeInsets.bottom }
+            { self.trackImageView.frame.size.width - self.labelsEdgeInsets.right - self.offLabel.bounds.size.width, self.labelsEdgeInsets.top },
+            { self.offLabel.bounds.size.width, self.trackImageView.frame.size.height - self.labelsEdgeInsets.top - self.labelsEdgeInsets.bottom }
         });
     }
 }
@@ -142,7 +144,7 @@ static const CGFloat kTTSwitchAnimationDuration = 0.25;
         
         _trackMaskLayer.contents = (id)[_trackMaskImage CGImage];
         [self createMasksForLockPosition];
-        
+
         self.maskedTrackView.layer.mask = _trackMaskLayer;
     }
 }
@@ -286,22 +288,25 @@ static const CGFloat kTTSwitchAnimationDuration = 0.25;
     
     [self thumbImageHighlighted:NO];
     
-    if (animated) {
-        CGFloat distanceOfTravel = fabsf((_on ? 1.0f : 0.0f) - [self valueAtThumbPosition]);
-        CGFloat animationDuration = kTTSwitchAnimationDuration * distanceOfTravel;
-        
-        [UIView animateWithDuration:animationDuration animations:^{
-            [self.thumbImageView setCenter:(CGPoint){ newThumbXCenter, self.thumbImageView.center.y }];
-            [self.trackImageView setCenter:(CGPoint){ newThumbXCenter, self.trackImageView.center.y }];
-        } completion:^(BOOL finished) {
-            [self maskInLockPosition];
-        }];
-    }
-    else {
-        [self.thumbImageView setCenter:(CGPoint){ newThumbXCenter, self.thumbImageView.center.y }];
-        [self.trackImageView setCenter:(CGPoint){ newThumbXCenter, self.trackImageView.center.y }];
-        [self maskInLockPosition];
-    }
+    CGFloat distanceOfTravel = fabsf((_on ? 1.0f : 0.0f) - [self valueAtThumbPosition]);
+    CGFloat animationDuration = animated ? kTTSwitchAnimationDuration * distanceOfTravel : 0.0f;
+
+    [UIView animateWithDuration:animationDuration animations:^{
+        [self moveThumbCenterToX:newThumbXCenter];
+    } completion:^(BOOL finished) {
+        [self didMoveThumbCenterToX:newThumbXCenter];
+    }];
+}
+
+- (void)moveThumbCenterToX:(CGFloat)newThumbCenterX
+{
+    [self.thumbImageView setCenter:(CGPoint){ newThumbCenterX, self.thumbImageView.center.y }];
+    [self.trackImageView setCenter:(CGPoint){ newThumbCenterX, self.trackImageView.center.y }];
+}
+
+- (void)didMoveThumbCenterToX:(CGFloat)newThumbCenterX
+{
+   [self maskInLockPosition]; 
 }
 
 - (void)thumbImageHighlighted:(BOOL)highlighted
