@@ -98,6 +98,10 @@ static const CGFloat kTTSwitchAnimationDuration = 0.25;
 
 - (void)layoutSubviews
 {
+    _maskedTrackView.frame = self.bounds;
+    _maskedThumbView.frame = self.bounds;
+    _trackMaskLayer.frame = self.bounds;
+    
     [super layoutSubviews];
 
     if (self.onString.length > 0) {
