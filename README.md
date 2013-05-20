@@ -24,7 +24,7 @@ Simply add the TTSwitch.h + TTSwitch.m files in the TTSwitch folder to your Xcod
 Add TTSwitch to your `Podfile` and `pod install`.
 
 ```ruby
-pod 'TTSwitch', '~> 0.0.4'
+pod 'TTSwitch', '~> 0.0.5'
 ```
 
 ## Resources
