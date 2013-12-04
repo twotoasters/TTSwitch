@@ -11,6 +11,7 @@
 #import <QuartzCore/QuartzCore.h>
 
 static const CGFloat kTTSwitchAnimationDuration = 0.25;
+static const CGSize kTTSwitchDefaultSize = {76.0f, 28.0f};
 
 @interface TTSwitch ()
 
@@ -44,6 +45,9 @@ static const CGFloat kTTSwitchAnimationDuration = 0.25;
 
 - (id)initWithFrame:(CGRect)frame
 {
+    if (CGSizeEqualToSize(frame.size, CGSizeZero)) {
+        frame.size = kTTSwitchDefaultSize;
+    }
     self = [super initWithFrame:frame];
     if (self) {
         [self commonInit];
