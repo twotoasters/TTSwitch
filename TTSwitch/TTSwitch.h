@@ -83,9 +83,9 @@ typedef void(^TTSwitchChangeHandler)(BOOL on);
 @property (nonatomic, copy) TTSwitchChangeHandler changeHandler;
 
 /**
- *  This is here for autocompletion purposes. By explicitly declaring the mutator, the full block syntax will be autocompleted by Xcode.
- *
- *  @param changeHandler bacon.
+ When the switch value is changed this block will be called.
+ @note This is here for autocompletion purposes. By explicitly declaring the mutator, the full block syntax will be autocompleted by Xcode.
+ @param changeHandler Block that will be called on value change
  */
 - (void)setChangeHandler:(TTSwitchChangeHandler)changeHandler;
 
