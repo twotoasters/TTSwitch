@@ -83,6 +83,13 @@ typedef void(^TTSwitchChangeHandler)(BOOL on);
 @property (nonatomic, copy) TTSwitchChangeHandler changeHandler;
 
 /**
+ *  This is here for autocompletion purposes. By explicitly declaring the mutator, the full block syntax will be autocompleted by Xcode.
+ *
+ *  @param changeHandler bacon.
+ */
+- (void)setChangeHandler:(TTSwitchChangeHandler)changeHandler;
+
+/**
  A Boolean value that determines the off/on state of the switch.
  @param on the off/on state
  @param animated When changing the state of the switch should the switch animate to its new state
