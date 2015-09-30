@@ -5,7 +5,7 @@
 TTSwitch is a UISwitch replacement built with images. You can now fully customize its appearance to whatever
 you want. It also adds block support when the switch value is changed.
  
-The switch also supports UIAppearance. You can globally setup all the TTSwitch appeareance and then anytime
+The switch also supports UIAppearance. You can globally setup all the TTSwitch appearance and then anytime
 you create an instance it will already be styled.
 
 <img src="https://raw.github.com/twotoasters/TTSwitch/master/Resources/switches_on.png" height="50%" /> &nbsp;
@@ -37,7 +37,7 @@ To make it easy to create your own custom switch we have included a [PSD](https:
 
 ### UIAppearance
 
-Globally setup the appeareance of all the TTSwitchs in your app.
+Globally setup the appearance of all the TTSwitchs in your app.
 
 ```objc
 [[TTSwitch appearance] setTrackImage:[UIImage imageNamed:@"round-switch-track"]];
