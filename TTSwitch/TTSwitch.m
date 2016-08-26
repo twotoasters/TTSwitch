@@ -296,8 +296,10 @@ static const CGFloat kTTSwitchAnimationDuration = 0.25;
     CGFloat animationDuration = animated ? kTTSwitchAnimationDuration * distanceOfTravel : 0.0f;
 
     [UIView animateWithDuration:animationDuration animations:^{
+        self.userInteractionEnabled = NO;
         [self moveThumbCenterToX:newThumbXCenter];
     } completion:^(BOOL finished) {
+        self.userInteractionEnabled = YES;
         [self didMoveThumbCenterToX:newThumbXCenter];
     }];
 }
